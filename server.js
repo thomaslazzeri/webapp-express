@@ -3,11 +3,16 @@ import placesRouter from './resources/routes.js';
 import dotenv from 'dotenv';
 import { notFound } from './middlewares/notFound.js';
 import { errorHandler } from './middlewares/errorsHandler.js';
+import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors({
+    origin: 'http://localhost:5173'
+}));
 
 app.use(express.json());
 app.use('/images', express.static('public/images'));
