@@ -1,5 +1,4 @@
 import express from 'express';
-import db from './db.js';
 import placesRouter from './resources/routes.js';
 import dotenv from 'dotenv';
 import { notFound } from './middlewares/notFound.js';
